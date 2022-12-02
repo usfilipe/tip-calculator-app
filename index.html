@@ -8,8 +8,6 @@
 
     <link rel="stylesheet" href="style.css" />
 
-    <script defer src="script.js"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,27 +20,50 @@
       <header>SPLI<br>TTER<header></header>
       <div class="card__app">
         <div class="card__input">
-          <form>
+          <form class="flex">
             <div>
 
               <label for="bill">Bill</label><br>
               <span class="dollar">$</span>
-              <input type="text" id="bill" name="bill" placeholder="0" ><br>
+              <input type="text" id="bill" name="bill" placeholder="0" onkeyup="tipBill(this)">
 
             </div>
             <div>
+            <label for="tip">Select Tip %</label>
+            <div class="grid__container">
+              
+                <div>
+                  <input class="btn__p btn__porcentage__5" type="button" id="p5" name="porcentage" value="5%" onclick="por(this)">
+                </div>
 
-              <label for="tip">Select Tip %</label><br>
-              
-              
+                <div>
+                  <input class="btn__p btn__porcentage__10" type="button" id="p10" name="porcentage" value="10%" onclick="por(this)">
+                </div>
+
+                <div>
+                  <input class="btn__p btn__porcentage__15" type="button" id="p15" name="porcentage" value="15%" onclick="por(this)">
+                </div>
+
+                <div>
+                  <input class="btn__p btn__porcentage__20" type="button" id="p20" name="porcentage" value="20%" onclick="por(this)">
+                </div>
+
+                <div>
+                  <input class="btn__p btn__porcentage__25" type="button" id="p25" name="porcentage" value="25%" onclick="por(this)">
+                </div>
+
+                <div>
+                  <input class="btn__p btn__porcentage__custom" type="text" id="pc" name="porcentage" placeholder="CUSTOM" onfocusout="por(this)">
+                </div>
+                
 
             </div>
-
+</div>
             <div>
 
-              <label for="people">Number of People</label><br>
+              <label for="people">Number of People</label>
               <span class="dollar">$</span>
-              <input type="text" id="people" name=people" placeholder="0" ><br>
+              <input type="text" id="people" name="porcentage" placeholder="0" onkeyup="per(this)">
 
             </div>
           </form>
@@ -55,7 +76,7 @@
               <p>Tip Amount</p>
               <p class="gray">/ Person</p>
             </div>
-            <div class="total__person">$4.50</div>
+            <div class="total__person" id="tipDisplay">$0.00</div>
             </div>
 
 
@@ -64,14 +85,15 @@
               <p>Total</p>
               <p class="gray">/ Person</p>
             </div>
-            <div class="total__person">$37.50</div>
+            <div class="total__person" id="totalDisplay">$0.00</div>
           </div>
           
-          <button class="btn">RESET</button>
+          <button onclick="reset()" class="btn" type="reset" name="porcentage">RESET</button>
         
         </div>
 
       </div>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>

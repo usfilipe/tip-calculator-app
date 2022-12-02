@@ -77,12 +77,26 @@ input:focus{
   
 }
 
+input:focus[name=porcentage] {
+  background-color: var(--strong-cyan);
+  border: none;
+}
+
 input::placeholder{
+  outline: none;
   color: var(--grayish-cyan);
+  
 }
 
 .gray{
   color: var(--grayish-cyan);
+}
+
+.flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .card__app{
@@ -155,4 +169,32 @@ input::placeholder{
   color: var(--grayish-cyan);
   font-size: 1.5rem;  
   margin-top: 5px;
+}
+
+.btn__p{
+  text-align: center;
+  background-color: var(--very-dark-cyan);
+  width: 100%;
+  color: var(--white);
+  height: 3rem;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--white);
+  font-weight: 700;
+  border-radius: 5px;
+  text-align: center;
+  
+}
+
+.grid__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(auto, auto);
+}
+
+#meuTeste{
+  width: 200px;
+  height: 200px;
+  background-color: red;
 }
